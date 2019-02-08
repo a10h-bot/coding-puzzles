@@ -6,9 +6,12 @@
 // --- Examples:
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
+//method 1
+
 function isPalindrome(str) {
   return [...str].reverse().join('') === str;
 }
-console.log(isPalindrome('Dalad'));
+console.log(isPalindrome('aba'));
+
 
 module.exports = isPalindrome;
