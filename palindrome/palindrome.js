@@ -13,5 +13,10 @@ function isPalindrome(str) {
 }
 console.log(isPalindrome('aba'));
 
-
+function isPalindrome1(str) {
+  return str
+    .split('')
+    .every((e, index) => e === str[str.length - index - 1]);
+}
 module.exports = isPalindrome;
+console.log(isPalindrome('ababfa'));
