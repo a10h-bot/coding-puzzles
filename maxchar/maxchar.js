@@ -6,11 +6,7 @@
 // maxChar("apple 1231111") === "1"
 function maxChar(str) {
   let charObj = {};
-  let max = 0;
-  let maxCharObj = {
-    element: null,
-    count: 0
-  }
+  let res;
   for (let i = 0; i < str.length; i++) {
     if (charObj[str[i]] === undefined) {
       charObj[str[i]] = 1;
@@ -19,13 +15,26 @@ function maxChar(str) {
       charObj[str[i]]++;
     }
   }
-  for (let key in charObj) {
-    if (maxCharObj.count < charObj.key)
-      maxCharObj.count = charObj.key;
+  let max = 0;
+  let keyArray = Object.keys(charObj)
+  for (let i = 1; i < keyArray.length; i++) {
+    max = charObj[keyArray[0]];
+    if (charObj[keyArray[i]] > max) {
+      max = charObj[keyArray[i]];
+      console.log(max);
+    }
   }
-  return maxCharObj.count;
+  for (let key in charObj) {
+    if (charObj[key] === max) {
+      res = key;
+    }
+  }
+  return res;
 }
 console.log(maxChar("abcccccccd"));
-// console.log(maxChar('apple 1231111'));
+console.log(maxChar('apple 1231111'));
+console.log(maxChar('abcdefghijklmnaaaaa'));
 
 
+
+module.exports = maxChar;
