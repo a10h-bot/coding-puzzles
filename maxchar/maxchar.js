@@ -37,4 +37,4 @@ console.log(maxChar('abcdefghijklmnaaaaa'));
 
 
 
-module.exports = maxChar;
+export default maxChar;
