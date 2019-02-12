@@ -13,11 +13,20 @@ function anagrams(str1, str2) {
 
 }
 
+const anagrams1 = (str1, str2) => {
+  const normalize = str =>
+    str
+      .toLowerCase()
+      .replace(/[^a-z0-9]/gi, '')
+      .split('')
+      .sort()
+      .join('');
+  return normalize(str1) === normalize(str2);
+};
 
-
-console.log(anagrams('rail safety', 'fairy tales'));
-console.log(anagrams('RAIL! SAFETY!', 'fairy tales'));
-console.log(anagrams('hello   ', '  hello'));
+console.log(anagrams1('rail safety', 'fairy tales'));
+console.log(anagrams1('RAIL! SAFETY!', 'fairy tales'));
+console.log(anagrams1('Hi there', 'Bye there'));
 
 
 
